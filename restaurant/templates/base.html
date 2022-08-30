@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Glada Änkan</title>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    {% block styles %} {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styles/out.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    {% endblock styles %}
+  </head>
+  <body x-data="{menu_open: 0, menu_idx: 0}">
+    <!-- Header -->
+    <div class="flex flex-col z-90">
+      <div
+        class="min-w-screen flex items-center px-4 py-2 border-b-gray-300 border-b-[1px]">
+        <div class="mx-auto" @click="menu_idx = 0; menu_open = 0">
+          <div class="text-primary text-2xl font-bold font-prim">
+            Restaurang
+          </div>
+          <div class="text-primary text-4xl font-bold font-prim">
+            Glada Änkan
+          </div>
+        </div>
+        <button class="p-4" x-on:click="menu_open = !menu_open">
+          <svg width="32" height="32">
+            <path
+              d="M5 8h20M5 16h20M5 24h20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Navigation menu -->
+      <div class="relative">
+        <div>
+          <div
+            class="md:hidden flex flex-col border-b-gray-300 border-b-[1px] overflow-hidden absolute transition-[max-height] duration-200 ease-in-out"
+            :class="menu_open ? 'max-h-screen' : 'max-h-0' ">
+            <button class="menu-link" x-on:click="menu_idx = 1; menu_open = 0">
+              A la Carte
+            </button>
+            <button class="menu-link" x-on:click="menu_idx = 2; menu_open = 0">
+              Dryck
+            </button>
+            <button class="menu-link" x-on:click="menu_idx = 3; menu_open = 0">
+              Aktuellt
+            </button>
+            <button class="menu-link" x-on:click="menu_idx = 4; menu_open = 0">
+              Lite Fakta
+            </button>
+            <button class="menu-link" x-on:click="menu_idx = 5; menu_open = 0">
+              Gästbok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPA Routing using Alpine.js -->
+    <div class="font-sec">
+      <div x-show="menu_idx == 1">{% include 'pages/index.html' %}</div>
+      <div x-show="menu_idx == 0">{% include 'pages/a_la_carte.html' %}</div>
+      <div x-show="menu_idx == 2">{% include 'pages/dryck.html' %}</div>
+      <div x-show="menu_idx == 3">{% include 'pages/aktuellt.html' %}</div>
+      <div x-show="menu_idx == 4">{% include 'pages/lite_fakta.html' %}</div>
+      <div x-show="menu_idx == 5">{% include 'pages/gästbok.html' %}</div>
+    </div>
+  </body>
+</html>

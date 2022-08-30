@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .font-prim {
+        font-family: 'Pinyon Script', cursive;
+    }
+
+    .font-sec {
+        font-family: 'Libre Baskerville', serif;
+    }
+
+    .menu-link {
+        @apply font-prim text-lg p-3 font-bold bg-white w-screen;
+    }
+
+    .title {
+        @apply font-bold text-sm;
+    }
+    
+    .desc {
+        @apply text-xs;
+    }
+
+
+    .hung {
+        @apply text-primary/80;
+    }
+
+    .eng {
+        @apply text-gray-600;
+    }
+}
