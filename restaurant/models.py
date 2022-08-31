@@ -23,3 +23,13 @@ class MenuEntry(models.Model):
 
     def __str__(self):
         return f'{self.swedish_title}, {self.price} :-'
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    date_time = models.DateTimeField()
+
+    review_text = models.CharField(max_length=800)
+
+    def __str__(self):
+        return f'Review by: {self.name} at {self.date_time}'

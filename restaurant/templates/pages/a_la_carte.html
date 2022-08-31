@@ -1,20 +1,44 @@
-<div class="flex flex-col p-4 items-center">
-  <h2 class="text-center font-bold text-2xl mb-4">Förrätter</h2>
-  {% for entry in menu_entries %}
-  <div class="flex py-3 border-b-[1px] border-b-gray-300 last:border-0">
-    <div>
-      <!-- Menu entry -->
-      <h3 class="swe title text-base">{{ entry.swedish_title }}</h3>
-      <p class="swe desc">{{ entry.swedish_description }}</p>
-      <h3 class="hung title">{{ entry.hungarian_title }}</h3>
-      <p class="hung desc">{{ entry.hungarian_description }}</p>
-      <h3 class="eng title">{{ entry.english_title }}</h3>
-      <p class="eng desc">{{ entry.english_description }}</p>
+<div class="flex flex-col p-4 max-w-3xl mx-auto">
+  <div>
+    <h2 class="text-center font-bold text-2xl mb-4">Förrätter</h2>
+    {% for entry in starters %}
+    <div
+      class="flex justify-between py-3 border-b-[1px] border-b-gray-300 last:border-0">
+      <div>
+        <!-- Menu entry -->
+        <h3 class="swe title text-base">{{ entry.swedish_title }}</h3>
+        <p class="swe desc">{{ entry.swedish_description }}</p>
+        <h3 class="hung title">{{ entry.hungarian_title }}</h3>
+        <p class="hung desc">{{ entry.hungarian_description }}</p>
+        <h3 class="eng title">{{ entry.english_title }}</h3>
+        <p class="eng desc">{{ entry.english_description }}</p>
+      </div>
+      <div>
+        <!-- Price entry -->
+        <p class="min-w-[20vw] text-right pr-3">{{ entry.price }}:-</p>
+      </div>
     </div>
-    <div>
-      <!-- Price entry -->
-      <p class="min-w-[20vw] text-center">{{ entry.price }}:-</p>
-    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+  <div class="mt-8">
+    <h2 class="text-center font-bold text-2xl mb-4">Varmrätter</h2>
+    {% for entry in main_courses %}
+    <div
+      class="flex justify-between py-3 border-b-[1px] border-b-gray-300 last:border-0">
+      <div>
+        <!-- Menu entry -->
+        <h3 class="swe title text-base">{{ entry.swedish_title }}</h3>
+        <p class="swe desc">{{ entry.swedish_description }}</p>
+        <h3 class="hung title">{{ entry.hungarian_title }}</h3>
+        <p class="hung desc">{{ entry.hungarian_description }}</p>
+        <h3 class="eng title">{{ entry.english_title }}</h3>
+        <p class="eng desc">{{ entry.english_description }}</p>
+      </div>
+      <div>
+        <!-- Price entry -->
+        <p class="min-w-[20vw] text-right pr-3">{{ entry.price }}:-</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
