@@ -2,38 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    width: 100%;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 @layer components {
-    .font-prim {
-        font-family: 'Pinyon Script', cursive;
-    }
+  .font-prim {
+    font-family: "Pinyon Script", cursive;
+  }
 
-    .font-sec {
-        font-family: 'Libre Baskerville', serif;
-    }
+  .font-sec {
+    font-family: "Libre Baskerville", serif;
+  }
 
-    .menu-link {
-        @apply font-prim text-lg p-3 font-bold bg-white w-screen;
-    }
+  .menu-link {
+    @apply font-prim text-lg p-3 font-bold bg-white w-screen;
+  }
 
-    .title {
-        @apply font-bold text-sm;
-    }
-    
-    .desc {
-        @apply text-xs;
-    }
+  .title {
+    @apply font-bold text-sm;
+  }
 
+  .desc {
+    @apply text-xs;
+  }
 
-    .hung {
-        @apply text-primary/80;
-    }
+  .hung {
+    @apply text-primary/80;
+  }
 
-    .eng {
-        @apply text-gray-600;
-    }
+  .eng {
+    @apply text-gray-600;
+  }
+
+  .menu-title {
+    @apply text-center font-bold text-2xl mt-4 mb-2;
+  }
+
+  .sub-title {
+    @apply text-left text-primary font-bold text-lg mt-4;
+  }
+
 }

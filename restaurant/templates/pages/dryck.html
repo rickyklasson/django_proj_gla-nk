@@ -1,1 +1,32 @@
-<h1>Dryck</h1>
+<div class="flex flex-col p-4 max-w-3xl mx-auto">
+  {% for m_title, m_entries in dryck.items %} {% cycle 0 1 0 0 as has_child silent %}
+  <div>
+    <h2 class="menu-title">{{m_title|title}}</h2>
+    {% if has_child %}
+    <div>
+      {% for subcat, entries in m_entries.items %}
+      <h2 class="sub-title">{{subcat|title}}</h2>
+      <div>
+        {% for s_entry in entries %}
+        <!-- protect -->
+        {% include 'components/menu_food_entry.html' with entry=s_entry only %}
+        <!-- protect -->
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- protect -->
+    <div>
+      {% for m_entry in m_entries %}
+      <!-- protect -->
+      {% include 'components/menu_food_entry.html' with entry=m_entry only %}
+      <!-- protect -->
+      {% endfor %}
+    </div>
+    <!-- protect -->
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>

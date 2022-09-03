@@ -1,44 +1,12 @@
 <div class="flex flex-col p-4 max-w-3xl mx-auto">
+  {% for m_title, m_entries in a_la_carte.items %}
   <div>
-    <h2 class="text-center font-bold text-2xl mb-4">Förrätter</h2>
-    {% for entry in starters %}
-    <div
-      class="flex justify-between py-3 border-b-[1px] border-b-gray-300 last:border-0">
-      <div>
-        <!-- Menu entry -->
-        <h3 class="swe title text-base">{{ entry.swedish_title }}</h3>
-        <p class="swe desc">{{ entry.swedish_description }}</p>
-        <h3 class="hung title">{{ entry.hungarian_title }}</h3>
-        <p class="hung desc">{{ entry.hungarian_description }}</p>
-        <h3 class="eng title">{{ entry.english_title }}</h3>
-        <p class="eng desc">{{ entry.english_description }}</p>
-      </div>
-      <div>
-        <!-- Price entry -->
-        <p class="min-w-[20vw] text-right pr-3">{{ entry.price }}:-</p>
-      </div>
-    </div>
+    <h2 class="menu-title">{{m_title|title}}</h2>
+    {% for m_entry in m_entries %}
+    <!-- protect -->
+    {% include 'components/menu_food_entry.html' with entry=m_entry only %}
+    <!-- protect -->
     {% endfor %}
   </div>
-  <div class="mt-8">
-    <h2 class="text-center font-bold text-2xl mb-4">Varmrätter</h2>
-    {% for entry in main_courses %}
-    <div
-      class="flex justify-between py-3 border-b-[1px] border-b-gray-300 last:border-0">
-      <div>
-        <!-- Menu entry -->
-        <h3 class="swe title text-base">{{ entry.swedish_title }}</h3>
-        <p class="swe desc">{{ entry.swedish_description }}</p>
-        <h3 class="hung title">{{ entry.hungarian_title }}</h3>
-        <p class="hung desc">{{ entry.hungarian_description }}</p>
-        <h3 class="eng title">{{ entry.english_title }}</h3>
-        <p class="eng desc">{{ entry.english_description }}</p>
-      </div>
-      <div>
-        <!-- Price entry -->
-        <p class="min-w-[20vw] text-right pr-3">{{ entry.price }}:-</p>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+  {% endfor %}
 </div>
