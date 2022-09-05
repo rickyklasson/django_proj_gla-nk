@@ -1,39 +1,62 @@
 {% load static %}
-<div
-  style="background-image: url({% static 'images/bg-parl.png' %})"
-  class="bg-color bg-cover bg-center flex items-center"
->
-  <div class="mx-auto mb-[4rem] mt-[12rem] bg-primary text-white px-6 py-4 font-sec rounded-md font-bold">
-    Bokning: 042-21 45 22
+<div>
+  <div class="mx-auto lg:px-6 max-w-7xl grid lg:grid-cols-2 lg:py-24 lg:gap-14 lg:place-content-center">
+    <!-- Hero image -->
+    <div style="background-image: url({% static 'images/bg-parl.png' %})"
+      class="bg-cover bg-center h-[300px] lg:h-[400px] lg:w-[550px]">
+    </div>
+    <!-- CTA -->
+    <div class="text-center my-12 mx-6 xl:flex lg:flex-col lg:justify-center lg:mx-auto">
+      <div>
+        <h1 class="text-2xl title lg:text-3xl">Välkommen till en äkta Ungersk restaurang!</h1>
+        <div>
+          <div>
+            <h1 class="hung text-xl">Isten hozta önöket egy igazi magyar étteremben!</h1>
+            <h1 class="eng text-xl">Welcome to a real Hungarian restaurant!</h1>
+          </div>
+          <div class="mx-auto mt-12 py-4 bg-primary text-white rounded-md font-bold text-xl max-w-[400px]">
+            Bokning: 042-21 45 22
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="bg-white z-10 p-6 text-justify">
-  <h1 class="swe title mt-6 text-xl">Välkommen till en äkta Ungersk restaurang!</h1>
-  <h1 class="hung title text-sm">Isten hozta önöket egy igazi magyar étteremben!</h1>
-  <h1 class="eng title text-sm mb-4">Welcome to a real Hungarian restaurant!</h1>
-  <div class="flex justify-center">
-    <button x-on:click="menu_idx = 1; menu_open = 0" class="bg-primary text-white text-sm py-2 px-4 mb-4 rounded-md">Meny</button>
-  </div>
-  <hr />
-  <h2 class="text-left py-4 text-xl">Våra specialiteter</h2>
-  <div class="mb-4 text-left">
-    <h3 class="font-bold"><i>Schnitzelkavalkad på planka</i></h3>
-    <p class="text-sm">
-      3 olika sorters schnitzlar: Parisisk, Budapest och Pusta på planka med klyftpotatis och tomatsallad.
-    </p>
-    <p class="text-xs font-bold text-right mt-2">485:- (Räcker till 2-3 personer)</p>
-  </div>
-  <div class="mb-4 text-left">
-    <h3 class="font-bold"><i>Meny för sällskap</i></h3>
-    <p class="text-sm"><b>Förrätt: </b>Ostgratinerad krämig vitlöksoppa med krutonger.</p>
-    <p class="text-sm">
-      <b>Varmrätt: </b>Fläskfilé á la Köksmästare serveras på kryddig grönsaksbädd samt brynt klyftpotatis.
-    </p>
-    <p class="text-sm"><b>Dessert: </b>Hemgjord Körsbärsglass med romaromspetsad chokladsås.</p>
-
-    <p class="text-xs font-bold text-right mt-2">
-      Två rätter: 285:-<br />
-      Tre rätter: 350:-
-    </p>
+  <!-- Lower section start.-->
+  <div class="bg-[#ebebeb] py-8 lg:py-20 w-screen">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-center text-2xl my-2 lg:text-5xl">Våra specialiteter</h2>
+      <!-- Grid row 1 -->
+      <div class="m-4 lg:grid lg:mt-12 lg:grid-cols-2 lg:gap-14">
+        <div class="text-left mt-4 lg:h-[100%] lg:flex lg:flex-col lg:justify-center">
+          <h2 class="font-bold text-lg lg:text-3xl">Schnitzelkavalkad på planka</h2>
+          <p class="mt-1 lg:text-xl">
+            3 olika sorters schnitzlar: Parisisk, Budapest och Pusta på planka med klyftpotatis och tomatsallad.
+          </p>
+        </div>
+        <div style="background-image: url({% static 'images/hero-spec-1.jpg' %})"
+          class="bg-cover bg-center py-[8rem] mt-4 lg:w-[100%] lg:py-[12rem]">
+        </div>
+      </div>
+      <!-- Grid row 2 -->
+      <div class="mx-4 my-8 lg:grid lg:mt-12 lg:grid-cols-2 lg:gap-14">
+        <div class="text-left mt-4 lg:h-[100%] lg:flex lg:flex-col lg:justify-center lg:order-last">
+          <h2 class="font-bold text-lg lg:text-3xl">Meny för sällskap</h2>
+          <p class="text-sm mt-1 lg:text-lg"><b>Förrätt: </b>Ostgratinerad krämig vitlöksoppa med krutonger.</p>
+          <p class="text-sm lg:text-lg">
+            <b>Varmrätt: </b>Fläskfilé á la Köksmästare serveras på kryddig grönsaksbädd samt brynt klyftpotatis.
+          </p>
+          <p class="text-sm lg:text-lg"><b>Dessert: </b>Hemgjord Körsbärsglass med romaromspetsad chokladsås.</p>
+        </div>
+        <div style="background-image: url({% static 'images/hero-spec-2.jpg' %})"
+          class="bg-cover bg-center py-[8rem] mt-4 lg:w-[100%] lg:py-[12rem]">
+        </div>
+      </div>
+      <div class="text-center">
+        <button x-on:click="menu_idx = 1; menu_open = 0"
+          class="bg-primary text-white text-bold py-4 px-6 my-6 rounded-md mx-auto lg:px-12 lg:py-8 lg:text-2xl lg:my-10">
+          A la carté - Meny
+        </button>
+      </div>
+    </div>
   </div>
 </div>

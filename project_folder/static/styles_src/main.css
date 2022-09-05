@@ -14,19 +14,23 @@ body {
   }
 
   .font-sec {
-    font-family: "Libre Baskerville", serif;
+    font-family: 'Lora', serif;
   }
 
   .menu-link {
-    @apply font-prim text-lg p-3 font-bold bg-white w-screen;
+    @apply font-prim text-2xl p-3 bg-white w-screen;
+  }
+
+  .menu-link-lg {
+    @apply font-prim text-[1.6rem] py-6 px-7;
   }
 
   .title {
-    @apply font-bold text-sm;
+    @apply font-bold text-sm lg:text-lg;
   }
 
   .desc {
-    @apply text-xs;
+    @apply text-xs italic lg:text-base;
   }
 
   .hung {
@@ -38,11 +42,11 @@ body {
   }
 
   .menu-title {
-    @apply text-center font-bold text-2xl mt-4 mb-2;
+    @apply text-center text-2xl mt-4 mb-2 lg:text-3xl;
   }
 
   .sub-title {
-    @apply text-left text-primary font-bold text-lg mt-4;
+    @apply text-left text-primary text-xl mt-4 lg:text-3xl;
   }
 
 }
