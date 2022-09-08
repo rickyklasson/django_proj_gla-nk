@@ -42,11 +42,46 @@ body {
   }
 
   .menu-title {
-    @apply text-center text-2xl mt-4 mb-2 lg:text-3xl;
+    @apply text-center mt-4 mb-2 text-2xl lg:text-3xl;
   }
 
   .sub-title {
     @apply text-left text-primary text-xl mt-4 lg:text-3xl;
   }
 
+  .bg-parl {
+    background-image: url('../images/bg-parl_450x300.jpg');
+  }
+  
+  .bg-parl-lg {
+    background-image: url('../images/bg-parl_850x567.jpg');
+  }
+
+  .bg-night {
+    background-image: url('../images/bg-night_450x300.jpg');
+  }
+  
+  .bg-night-lg {
+    background-image: url('../images/bg-night_850x567.jpg');
+  }
+
+  .spec-img-1 {
+    background-image: url('../images/hero-spec-1_450x253.jpg');
+  }
+  
+  .spec-img-1-lg {
+    background-image: url('../images/hero-spec-1_700x394.jpg');
+  }
+
+  .spec-img-2 {
+    background-image: url('../images/hero-spec-2_450x675.jpg');
+  }
+  
+  .spec-img-2-lg {
+    background-image: url('../images/hero-spec-2_700x1050.jpg');
+  }
+}
+
+#hero-img {
+  background-image: url('../images/bg-parl.png');
 }
